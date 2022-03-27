@@ -1,0 +1,19 @@
+
+.shopping-cart-list-container {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    width: 20%;
+    padding: 30px 30px;
+    border-radius: 8px;
+}
+
+.shopping-cart-list-inner-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.shopping-cart-list-header {
+    margin: 0 0;
+}

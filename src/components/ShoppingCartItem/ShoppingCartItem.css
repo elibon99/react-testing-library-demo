@@ -1,0 +1,23 @@
+
+.shopping-cart-item-container {
+    display: grid;
+    grid-template-columns: 1fr 0.8fr 1fr;
+/*    flex-direction: row;*/
+    width: 100%;
+    align-items: center;
+}
+
+.shopping-cart-item-title {
+    margin: 0 0;
+    font-weight: normal;
+}
+
+.shopping-cart-item-price {
+    margin: 0 0;
+    font-weight: normal;
+    text-align: right;
+}
+
+.shopping-cart-item-remove {
+    cursor: pointer;
+}
