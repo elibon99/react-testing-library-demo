@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ShoppingCartList /> renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="shopping-cart-list-container"
+  >
+    <h3
+      class="shopping-cart-list-header"
+    >
+      Cart Items
+    </h3>
+    <div
+      class="shopping-cart-list-inner-container"
+      data-testid="shopping-cart-list"
+    >
+      <div
+        class="shopping-cart-item-container"
+        data-testid="shopping-cart-item"
+      >
+        <h4
+          class="shopping-cart-item-title"
+        >
+          Macbook
+        </h4>
+        <div
+          class="shopping-cart-item-remove"
+          data-testid="remove-product-button"
+        >
+          <svg
+            aria-hidden="true"
+            height="28"
+            preserveAspectRatio="xMidYMid meet"
+            role="img"
+            viewBox="0 0 64 64"
+            width="28"
+            xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M62 52c0 5.5-4.5 10-10 10H12C6.5 62 2 57.5 2 52V12C2 6.5 6.5 2 12 2h40c5.5 0 10 4.5 10 10v40z"
+              fill="#ff5a79"
+            />
+            <path
+              d="M50 21.2L42.8 14L32 24.8L21.2 14L14 21.2L24.8 32L14 42.8l7.2 7.2L32 39.2L42.8 50l7.2-7.2L39.2 32z"
+              fill="#fff"
+            />
+          </svg>
+        </div>
+        <h4
+          class="shopping-cart-item-price"
+        >
+          16000 SEK
+        </h4>
+      </div>
+    </div>
+    <div
+      class="shopping-status-container"
+    >
+      <h3
+        class="shopping-status-title"
+      >
+        Total items: 1
+      </h3>
+      <h3
+        class="shopping-status-title"
+      >
+        Total price: 16000
+      </h3>
+    </div>
+  </div>
+</DocumentFragment>
+`;

@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ShoppingStatus/> renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="shopping-status-container"
+  >
+    <h3
+      class="shopping-status-title"
+    >
+      Total items: 1
+    </h3>
+    <h3
+      class="shopping-status-title"
+    >
+      Total price: 16000
+    </h3>
+  </div>
+</DocumentFragment>
+`;

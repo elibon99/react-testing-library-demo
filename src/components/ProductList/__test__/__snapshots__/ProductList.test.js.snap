@@ -1,0 +1,98 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ProductList/> renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="product-list-container"
+  >
+    <h3
+      class="product-list-header"
+    >
+      Products
+    </h3>
+    <div
+      class="product-list"
+      data-testid="product-list"
+    >
+      <div
+        class="product-item-container"
+        id="product-item"
+      >
+        <img
+          alt="product"
+          class="product-item-image"
+          src="Macbook.jpg"
+        />
+        <h4
+          class="product-item-title"
+        >
+          Macbook
+        </h4>
+        <h4
+          class="product-item-price"
+        >
+          16000 SEK
+        </h4>
+        <button
+          class="product-item-btn product-item-btn-disabled"
+          title="Macbook"
+        >
+          Add to cart
+        </button>
+      </div>
+      <div
+        class="product-item-container"
+        id="product-item"
+      >
+        <img
+          alt="product"
+          class="product-item-image"
+          src="Iphone.jpg"
+        />
+        <h4
+          class="product-item-title"
+        >
+          Iphone
+        </h4>
+        <h4
+          class="product-item-price"
+        >
+          7000 SEK
+        </h4>
+        <button
+          class="product-item-btn undefined"
+          title="Iphone"
+        >
+          Add to cart
+        </button>
+      </div>
+      <div
+        class="product-item-container"
+        id="product-item"
+      >
+        <img
+          alt="product"
+          class="product-item-image"
+          src="AirPods.webp"
+        />
+        <h4
+          class="product-item-title"
+        >
+          AirPods
+        </h4>
+        <h4
+          class="product-item-price"
+        >
+          1500 SEK
+        </h4>
+        <button
+          class="product-item-btn undefined"
+          title="AirPods"
+        >
+          Add to cart
+        </button>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
