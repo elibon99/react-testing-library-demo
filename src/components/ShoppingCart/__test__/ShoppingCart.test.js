@@ -2,7 +2,12 @@ import {render, screen, fireEvent} from "@testing-library/react";
 import ShoppingCart from "../ShoppingCart";
 import {within} from "@testing-library/dom";
 
-const addProduct = (products) => {
+/**
+ * This function identifies the add button for the products defined in
+ * the list of products and clicks on it.
+ * @param products an array of product names
+ */
+const addProductToShoppingCart = (products) => {
     const ProductList = within(screen.getByTestId("product-list"))
     products.forEach((product) => {
         const ProductItem = within(ProductList.getByText(product).parentElement)
@@ -10,7 +15,12 @@ const addProduct = (products) => {
     })
 }
 
-const removeProduct = (products) => {
+/**
+ * This method tries to identifies the remove button for the products in the shopping cart
+ * defined by the list of products and clicks on it.
+ * @param products an array of product names
+ */
+const removeProductFromShoppingCart = (products) => {
     const ShoppingCartList = within(screen.getByTestId("shopping-cart-list"))
     products.forEach((product) => {
         const ShoppingCartItem = within(ShoppingCartList.getByText(product).parentElement)
@@ -18,52 +28,32 @@ const removeProduct = (products) => {
     })
 }
 
-describe("ShoppingCart", () => {
+describe('<ShoppingCart />', () => {
+    /**
+     * When adding one product to the shopping cart we would expect it
+     * to appear in the list of shopping cart items.
+     */
     it("adds one product to shopping cart", async () => {
         render(<ShoppingCart/>);
-        addProduct(["Macbook"])
-        const divElements = screen.getAllByTestId("shopping-cart-item")
-        expect(divElements.length).toBe(1)
+        addProductToShoppingCart(["Macbook"])
+
+        // Expect 1 product in shopping cart
+        const ShoppingCartItems = screen.getAllByTestId("shopping-cart-item")
+        expect(ShoppingCartItems.length).toBe(1)
     })
 
-    it("adds 3 products to shopping cart", async () => {
+    /**
+     * When remove one product from the shopping cart we would expect it
+     * to disappear from the list of shopping cart items.
+     */
+    it("removes one product from shopping cart", async () => {
         render(<ShoppingCart/>);
-        addProduct(["Macbook", "Iphone", "AirPods"])
-        const divElements = screen.getAllByTestId("shopping-cart-item")
-        expect(divElements.length).toBe(3)
-    })
+        addProductToShoppingCart(["Macbook"])
+        removeProductFromShoppingCart(["Macbook"])
 
-    it("removes 1 product from shopping cart", async () => {
-        render(<ShoppingCart/>);
-        addProduct(["Macbook"])
-        removeProduct(["Macbook"])
-        const divElements = screen.queryAllByTestId("shopping-cart-item")
-        expect(divElements.length).toBe(0)
-    })
-
-    it("removes 2 products from shopping cart", async () => {
-        render(<ShoppingCart/>);
-        addProduct(["Macbook", "Iphone", "AirPods"])
-        removeProduct(["Macbook", "Iphone"])
-        const divElements = screen.queryAllByTestId("shopping-cart-item")
-        expect(divElements.length).toBe(1)
-    })
-
-    it("add button should be disabled when product is in cart", async () => {
-        render(<ShoppingCart/>)
-        addProduct(["Macbook"])
-        const ProductList = within(screen.getByTestId("product-list"))
-        const ProductItem = within(ProductList.getByText("Macbook").parentElement)
-        const buttonElement = ProductItem.getByRole("button", {name: "Add to cart"})
-        expect(buttonElement).toHaveClass("product-item-btn-disabled")
-    })
-
-    it("add button should be enabled when product is not in cart", async () => {
-        render(<ShoppingCart/>)
-        const ProductList = within(screen.getByTestId("product-list"))
-        const ProductItem = within(ProductList.getByText("Macbook").parentElement)
-        const buttonElement = ProductItem.getByRole("button", {name: "Add to cart"})
-        expect(buttonElement).not.toHaveClass("product-item-btn-disabled")
+        // Expect 0 products in shopping cart
+        const ShoppingCartItems = screen.queryAllByTestId("shopping-cart-item")
+        expect(ShoppingCartItems.length).toBe(0)
     })
 
 })
